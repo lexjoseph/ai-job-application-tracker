@@ -3,7 +3,8 @@
 import { useState } from "react";
 import type { JobApplication } from "../types/jobs";
 
-interface JobFormProps {
+//jobform expects one prop called addApplication
+interface JobFormProps { 
   addApplication: (application: JobApplication) => void;
 }
 
@@ -12,12 +13,16 @@ const JobForm = ({ addApplication }: JobFormProps) => {
   const [role, setRole] = useState<string>("");
 
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>): void => {
+    e.preventDefault(
+
+    );
     const newApplication: JobApplication = {
       id: Date.now(),
       company,
       role,
       status: "Applied",
     };
+
     addApplication(newApplication);
 
     setCompany("");
@@ -42,6 +47,7 @@ const JobForm = ({ addApplication }: JobFormProps) => {
           setRole(e.target.value)
         }
       />
+      <button type="submit">Add Application</button>
     </form>
   );
 };

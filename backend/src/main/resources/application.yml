@@ -1,3 +1,5 @@
+server:
+  port: ${PORT:8080}
 spring:
   application:
     name: job-tracker-api
@@ -25,6 +27,9 @@ management:
   endpoint:
     health:
       show-details: when_authorized
+
+server:
+  port: ${PORT:8080}
 
 springdoc:
   api-docs:

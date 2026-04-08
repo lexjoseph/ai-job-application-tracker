@@ -29,6 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased`}
       >
+        <Analytics/>
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
